@@ -17,10 +17,22 @@
         <h1>🐶 동물상 테스트 🐱</h1>
         <p class="subtitle">나와 닮은 동물은 누구일까요?</p>
         
-        <div id="upload-area" class="upload-area">
-            <span class="upload-text">사진을 클릭하거나 드래그해서 올려주세요</span>
-            <input type="file" id="image-upload" accept="image/*" hidden>
-            <img id="image-preview" class="image-preview" style="display: none;">
+        <div class="tab-buttons">
+            <button id="upload-tab" class="tab-btn active">사진 올리기</button>
+            <button id="webcam-tab" class="tab-btn">실시간 카메라</button>
+        </div>
+
+        <div id="upload-section" class="tab-content">
+            <div id="upload-area" class="upload-area">
+                <span class="upload-text">사진을 클릭하거나 드래그해서 올려주세요</span>
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                <img id="image-preview" class="image-preview" style="display: none;">
+            </div>
+        </div>
+
+        <div id="webcam-section" class="tab-content" style="display: none;">
+            <div id="webcam-container" class="webcam-container"></div>
+            <button id="webcam-start" class="webcam-btn">카메라 시작</button>
         </div>
 
         <div id="loading" class="loading" style="display: none;">
@@ -29,9 +41,9 @@
         </div>
 
         <div id="result-area" class="result-area" style="display: none;">
-            <h2 id="result-title">당신은 '강아지' 상입니다!</h2>
+            <h2 id="result-title">분석 결과</h2>
             <div id="label-container"></div>
-            <button onclick="window.location.reload()" class="retry-btn">다시 하기</button>
+            <button id="retry-btn" class="retry-btn">다시 하기</button>
         </div>
     </div>
 
