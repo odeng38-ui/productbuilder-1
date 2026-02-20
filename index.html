@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>동물상 테스트 - 강아지 vs 고양이</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <!-- TensorFlow.js and Teachable Machine Image -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
-    <lotto-generator></lotto-generator>
+    
+    <div class="test-container">
+        <h1>🐶 동물상 테스트 🐱</h1>
+        <p class="subtitle">나와 닮은 동물은 누구일까요?</p>
+        
+        <div id="upload-area" class="upload-area">
+            <span class="upload-text">사진을 클릭하거나 드래그해서 올려주세요</span>
+            <input type="file" id="image-upload" accept="image/*" hidden>
+            <img id="image-preview" class="image-preview" style="display: none;">
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>분석 중...</p>
+        </div>
+
+        <div id="result-area" class="result-area" style="display: none;">
+            <h2 id="result-title">당신은 '강아지' 상입니다!</h2>
+            <div id="label-container"></div>
+            <button onclick="window.location.reload()" class="retry-btn">다시 하기</button>
+        </div>
+    </div>
 
     <div class="contact-container">
         <h2>제휴 문의</h2>
