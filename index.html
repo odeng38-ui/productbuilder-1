@@ -10,6 +10,26 @@
 <body>
     <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
     <lotto-generator></lotto-generator>
+
+    <div class="contact-container">
+        <h2>제휴 문의</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-group">
+                <label for="name">성함/업체명</label>
+                <input type="text" id="name" name="name" required placeholder="예: 홍길동">
+            </div>
+            <div class="form-group">
+                <label for="email">이메일 주소</label>
+                <input type="email" id="email" name="_replyto" required placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+                <label for="message">문의 내용</label>
+                <textarea id="message" name="message" required placeholder="제휴 관련 문의 사항을 입력해주세요."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">문의 보내기</button>
+        </form>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
